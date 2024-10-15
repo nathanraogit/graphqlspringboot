@@ -38,4 +38,5 @@ public class Book {
     public void setReviews(List<Review> reviews) {
         this.reviews = reviews;
     }
+    // remote book update 1
 }
