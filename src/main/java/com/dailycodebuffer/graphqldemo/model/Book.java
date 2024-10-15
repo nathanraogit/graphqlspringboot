@@ -40,4 +40,5 @@ public class Book {
     }
     // remote book update 1
     // remote book update 2
+    // remote book update 4 (before this branch2 changes were applied)
 }
