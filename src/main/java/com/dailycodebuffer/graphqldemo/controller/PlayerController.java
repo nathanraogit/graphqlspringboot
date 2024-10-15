@@ -56,6 +56,7 @@ public class PlayerController {
         return playerService.delete(id);
     }
 
+     // REMOTE 2
 
 
 }
