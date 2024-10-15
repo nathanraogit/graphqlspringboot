@@ -1,8 +1,12 @@
 package com.dailycodebuffer.graphqldemo.controller;
 
+import com.dailycodebuffer.graphqldemo.model.Author;
 import com.dailycodebuffer.graphqldemo.model.Player;
+import com.dailycodebuffer.graphqldemo.model.SortingOrder;
 import com.dailycodebuffer.graphqldemo.model.Team;
 import com.dailycodebuffer.graphqldemo.service.PlayerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.support.SortDefinition;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
@@ -14,16 +18,23 @@ import java.util.Optional;
 @Controller
 public class PlayerController {
 
-    private final PlayerService playerService;
+    @Autowired
+    private  PlayerService playerService;
 
-    public PlayerController(PlayerService playerService) {
-        this.playerService = playerService;
-    }
 
     @QueryMapping
     public List<Player> findAll() {
         return playerService.findAll();
     }
+
+    @QueryMapping
+    public List<Player> findAll2(@Argument int limit) {
+
+            return playerService.findAll2(limit);
+
+    }
+
+
 
     @QueryMapping
     public Optional<Player> findOne(@Argument Integer id) {
@@ -44,4 +55,7 @@ public class PlayerController {
     public Player delete(@Argument Integer id) {
         return playerService.delete(id);
     }
+
+
+
 }

@@ -1,6 +1,7 @@
 package com.dailycodebuffer.graphqldemo.service;
 
 import com.dailycodebuffer.graphqldemo.model.Player;
+import com.dailycodebuffer.graphqldemo.model.SortingOrder;
 import com.dailycodebuffer.graphqldemo.model.Team;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 @Service
 public class PlayerService {
@@ -18,6 +20,15 @@ public class PlayerService {
     public List<Player> findAll() {
         return players;
     }
+
+    public List<Player> findAll2(int limit) {
+        return findAll().stream()
+                .limit(limit)
+                .collect(Collectors.toList());
+    }
+
+
+
 
     public Optional<Player> findOne(Integer id) {
         return players.stream()
