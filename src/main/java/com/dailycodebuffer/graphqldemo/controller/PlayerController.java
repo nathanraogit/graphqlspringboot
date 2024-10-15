@@ -54,6 +54,7 @@ public class PlayerController {
     @MutationMapping
     public Player delete(@Argument Integer id) {
         return playerService.delete(id);
+        //REMOTE 3
     }
 
      // REMOTE 2
