@@ -39,4 +39,5 @@ public class Book {
         this.reviews = reviews;
     }
     // remote book update 1
+    // remote book update 2
 }
