@@ -71,4 +71,8 @@ public class PlayerService {
         players.add(new Player(id.incrementAndGet(), "Rishabh pant", Team.DC));
         players.add(new Player(id.incrementAndGet(), "Suresh Raina", Team.CSK));
     }
+
+    private void nothing() {
+
+    }
 }
